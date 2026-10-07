@@ -55,7 +55,6 @@ The dataset contains **500 customer records** with 9 original features.
 
 ### Dataset Shape
 
-```text
 Rows: 500
 Columns: 9
 Missing Values: None
@@ -70,27 +69,41 @@ SciPy
 ReportLab
 Jupyter Notebook
 
-📁 Project Structure
-Week11-Customer-Segmentation-Prediction/
+### 📁 Project Structure
+ Customer-Segmentation-Prediction/
 │
 ├── customer_segmentation.ipynb
+
 ├── customer_segmentation.csv
+
 ├── segmentation_data.csv
+
 ├── segment_profiles.md
+
 ├── model_evaluation_results.csv
+
 ├── business_recommendations.pdf
+
 ├── README.md
 │
 ├── models/
 │
 └── visualizations/
+
     ├── elbow_method.png
+    
     ├── customer_segment_distribution.png
+    
     ├── kmeans_clusters_pca.png
+    
     ├── hierarchical_clusters_pca.png
+    
     ├── dbscan_clusters_pca.png
+    
     ├── churn_rate_by_segment.png
+    
     ├── baseline_confusion_matrices.png
+    
     └── feature_importance_by_segment.png
 
 ### 🔄 Project Workflow
@@ -155,7 +168,8 @@ Cluster	Customers
 2	116
 3	62
 4	124
-3. 🔬 Additional Clustering Algorithms
+
+### 3. 🔬 Additional Clustering Algorithms
 
 Two additional clustering approaches were evaluated to satisfy the clustering comparison requirement.
 
@@ -186,7 +200,7 @@ Noise percentage: 6.4%
 
 DBSCAN produced a higher silhouette score but generated many small clusters. Therefore, K-Means was retained as the primary segmentation method because its five-segment structure was more suitable for business interpretation.
 
-4. 👥 Customer Segments
+### 4. 👥 Customer Segments
 
 The five K-Means clusters were interpreted and given business-oriented names.
 
@@ -196,65 +210,125 @@ Month-to-Month At-Risk Customers	116	23.2%	20.69%
 High-Charge Electronic Check Customers	101	20.2%	13.86%
 Long-Term Customers	97	19.4%	7.22%
 One-Year Electronic Check Customers	62	12.4%	6.45%
-5. 📈 Segment Analysis
+
+### 5. 📈 Segment Analysis
+
 Long-Term Customers
+
 Customers: 97
+
 Average Tenure: 34.88 months
+
 Average Monthly Charges: ₹110.90
+
 Churn Rate: 7.22%
+
 Contract profile: Two-year
+
 Payment methods: Bank Transfer and Credit Card
+
 Business Recommendations
+
 Maintain loyalty programs.
+
 Encourage contract renewals.
+
 Provide personalized account support.
+
 Continue monitoring customer satisfaction.
+
 High-Charge Electronic Check Customers
+
 Customers: 101
+
 Average Tenure: 36.28 months
+
 Average Monthly Charges: ₹121.08
+
 Churn Rate: 13.86%
+
 Electronic Check usage: 100%
+
 Business Recommendations
+
 Monitor high-value customers.
+
 Provide targeted retention offers.
+
 Promote convenient payment alternatives.
+
 Encourage longer-term contracts where appropriate.
+
 Low-Churn One-Year Customers
+
 Customers: 124
+
 Average Tenure: 38.39 months
+
 Average Monthly Charges: ₹115.25
+
 Churn Rate: 3.23%
+
 Contract profile: One-year
+
 Business Recommendations
+
 Maintain the existing customer experience.
+
 Encourage contract renewals.
+
 Develop loyalty initiatives.
+
 Explore referral opportunities.
+
 Month-to-Month At-Risk Customers
+
 Customers: 116
+
 Average Tenure: 36.35 months
+
 Average Monthly Charges: ₹108.85
+
 Churn Rate: 20.69%
+
 Contract profile: Month-to-month
+
 Business Recommendations
+
 Use targeted retention campaigns.
+
 Communicate the benefits of longer-term contracts.
+
 Provide personalized offers.
+
 Monitor changes in customer behavior.
+
 One-Year Electronic Check Customers
+
 Customers: 62
+
 Average Tenure: 36.16 months
+
 Average Monthly Charges: ₹111.52
+
 Churn Rate: 6.45%
+
 Contract profile: One-year
+
 Payment method: Electronic Check
+
 Business Recommendations
+
 Promote convenient payment alternatives.
+
 Maintain proactive renewal communication.
+
 Monitor customer engagement.
+
 Provide personalized account support.
-6. 🤖 Segment-Specific Prediction Models
+
+
+### 6. 🤖 Segment-Specific Prediction Models
 
 Separate Random Forest classification models were developed for each of the five customer segments.
 
@@ -274,7 +348,8 @@ Recall
 F1 Score
 ROC-AUC
 Confusion Matrix
-7. 📊 Model Evaluation
+
+### 7. 📊 Model Evaluation
 
 The tuned models produced the following results:
 
@@ -290,7 +365,7 @@ Some segments contain only a small number of churned customers.
 
 Because of this class imbalance, accuracy alone does not fully describe model performance. Precision, recall, F1-score, ROC-AUC, and confusion matrices were therefore considered together.
 
-8. ⚙️ Hyperparameter Tuning
+### 8. ⚙️ Hyperparameter Tuning
 
 GridSearchCV was used to tune the Random Forest models.
 
@@ -310,7 +385,7 @@ Scoring Metric: F1 Score
 
 This tuning process was used to identify suitable model configurations while considering the imbalance between churn and non-churn customers.
 
-9. 🔎 Feature Importance
+### 9. 🔎 Feature Importance
 
 Feature importance was extracted from the tuned Random Forest models.
 
@@ -328,7 +403,7 @@ Tenure was the most important feature across the segment-specific Random Forest 
 
 Feature importance describes how the trained model used the variables for prediction. It does not establish a causal relationship between a feature and customer churn.
 
-10. 📉 PCA Visualization
+### 10. 📉 PCA Visualization
 
 Principal Component Analysis was used to visualize the customer clusters in two dimensions.
 
@@ -341,7 +416,7 @@ Total: 34.10%
 
 The PCA visualization provides a two-dimensional representation of the clustering structure, but it does not represent all variance in the original feature space.
 
-11. 🧪 Testing & Validation
+### 11. 🧪 Testing & Validation
 
 The project was validated using:
 
@@ -365,7 +440,8 @@ DBSCAN Clusters
 Churn Rate by Segment
 Confusion Matrices
 Feature Importance
-12. 💡 Business Insights
+
+### 12. 💡 Business Insights
 
 The segmentation analysis demonstrates that customer groups can have different churn patterns.
 
@@ -384,7 +460,8 @@ Monitoring high-value customers
 
 These recommendations should be validated against additional operational and customer-level information before being implemented.
 
-13. ⚠️ Limitations
+### 13. ⚠️ Limitations
+
 Some segments contain relatively few churned customers.
 Small positive-class counts can make precision, recall, and F1-score unstable.
 The dataset contains only 500 customer records.
@@ -392,7 +469,9 @@ PCA's first two components represent 34.10% of total variance.
 Feature importance should not be interpreted as causation.
 Model performance on this dataset may not generalize to other customer populations.
 Business recommendations should be validated using additional business data.
-14. 📄 Project Files
+
+### 14. 📄 Project Files
+
 File	Purpose
 customer_segmentation.ipynb	Complete analysis and machine learning workflow
 customer_segmentation.csv	Original project dataset
@@ -402,7 +481,9 @@ model_evaluation_results.csv	Segment-specific model evaluation results
 business_recommendations.pdf	Business recommendations report
 visualizations/	Project charts and visual outputs
 models/	Model-related files
-15. 🚀 How to Run
+
+## 15. 🚀 How to Run
+
 Step 1: Clone the repository
 git clone <repository-url>
 cd Week11-Customer-Segmentation-Prediction
@@ -422,7 +503,7 @@ customer_segmentation.ipynb
 
 Run the notebook cells from top to bottom.
 
-📌 Conclusion
+## 📌 Conclusion
 
 This project demonstrates an end-to-end machine learning workflow for customer segmentation and churn prediction.
 
@@ -430,8 +511,9 @@ Multiple clustering algorithms were compared, customer groups were analyzed usin
 
 The project combines unsupervised learning, supervised learning, model evaluation, hyperparameter tuning, feature interpretation, and business analysis into a single customer analytics pipeline.
 
-👨‍💻 Author
-
+## 👨‍💻 Author
 Viren Wankhade
-
-Data Analyst | Data Science Enthusiast
+Aspiring Data Analyst | Data Science Enthusiast
+- GitHub: https://github.com/viren689
+- Portfolio: https://viren-portfolio-gamma.vercel.app/
+- Email: viren19271@gmail.com
